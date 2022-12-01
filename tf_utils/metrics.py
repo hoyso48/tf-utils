@@ -76,7 +76,7 @@ class MultilabelMetrics(tf.keras.metrics.Metric):
         self.fn.assign(tf.zeros(self.shape))
         self.fp.assign(tf.zeros(self.shape))
         
-class CummulatvieMultilabelMetrics(tf.keras.metrics.Metric):
+class CummulativeMultilabelMetrics(tf.keras.metrics.Metric):
     #cummulative multilabel metrics
     def __init__(self, name='mF', num_thresholds=20, beta=1.0, average='macro', from_logits=False, **kwargs):
         if name not in ['AUC', 'mP', 'mR', 'mF', 'mIoU', 'best_f', 'best_th']:
