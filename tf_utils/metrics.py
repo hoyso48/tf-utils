@@ -103,7 +103,7 @@ class CummulativeMultilabelMetrics(tf.keras.metrics.Metric):
 
     def update_state(self, y_true, y_pred, sample_weight=None):
       
-        y_true, y_preds = self.decode_prediction(y_true, y_pred)
+        y_true, y_pred = self.decode_prediction(y_true, y_pred)
         
         arr = tf.TensorArray(tf.float32, (self.num_thresholds-1), clear_after_read=True)
         for i in tf.range(self.num_thresholds-1):
